@@ -1,11 +1,6 @@
 import argparse
 import os
 import torch
-from exp.exp_long_term_forecasting import Exp_Long_Term_Forecast
-from exp.exp_imputation import Exp_Imputation
-from exp.exp_short_term_forecasting import Exp_Short_Term_Forecast
-from exp.exp_anomaly_detection import Exp_Anomaly_Detection
-from exp.exp_classification import Exp_Classification
 from exp.exp_flame import Exp_flame
 from utils.print_args import print_args
 import random
@@ -143,6 +138,7 @@ if __name__ == '__main__':
     parser.add_argument('--droppath', default=0.0, type=float)
     parser.add_argument('--scale', default=1, type=int)
     parser.add_argument('--squeeze', default=6, type=int)
+    parser.add_argument('--target_index', default=-1, type=int, choices=[0, 1, -1], help='0: theta, 1: ustar, -1: xi')
 
 
     args = parser.parse_args()
@@ -163,20 +159,8 @@ if __name__ == '__main__':
     print('Args in experiment:')
     print_args(args)
 
-    if args.task_name == 'long_term_forecast':
-        Exp = Exp_Long_Term_Forecast
-    elif args.task_name == 'short_term_forecast':
-        Exp = Exp_Short_Term_Forecast
-    elif args.task_name == 'imputation':
-        Exp = Exp_Imputation
-    elif args.task_name == 'anomaly_detection':
-        Exp = Exp_Anomaly_Detection
-    elif args.task_name == 'classification':
-        Exp = Exp_Classification
-    elif args.task_name == 'flame':
+    if args.task_name == 'flame':
         Exp = Exp_flame
-    else:
-        Exp = Exp_Long_Term_Forecast
 
     if args.is_training == 1:
         for ii in range(args.itr):

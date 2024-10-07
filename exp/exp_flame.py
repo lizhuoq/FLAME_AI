@@ -1,7 +1,6 @@
 from data_provider.data_factory import data_provider
 from exp.exp_basic import Exp_Basic
 from utils.tools import EarlyStopping, adjust_learning_rate, visual
-from utils.metrics import metric
 import torch
 import torch.nn as nn
 from torch import optim
@@ -9,8 +8,6 @@ import os
 import time
 import warnings
 import numpy as np
-from utils.dtw_metric import dtw,accelerated_dtw
-from utils.augmentation import run_augmentation,run_augmentation_single
 from transformers import get_cosine_schedule_with_warmup
 from sklearn.metrics import mean_squared_error
 import pandas as pd
@@ -25,6 +22,7 @@ warnings.filterwarnings('ignore')
 class Exp_flame(Exp_Basic):
     def __init__(self, args):
         super(Exp_flame, self).__init__(args)
+        self.invalid_feature_id = [2, 3]
 
     def _build_model(self):
         model = self.model_dict[self.args.model].Model(self.args).float()
@@ -53,13 +51,13 @@ class Exp_flame(Exp_Basic):
                 batch_x = batch_x.float().to(self.device)
                 batch_y = batch_y.float().to(self.device)
 
-                outputs = self.model(batch_x[:, :, [i for i in range(self.args.enc_in + 2) if i not in [2, 3]], :, :])
+                outputs = self.model(batch_x[:, :, [i for i in range(self.args.enc_in + len(self.invalid_feature_id)) if i not in self.invalid_feature_id], :, :])
                 # outputs[:, :, -1, :, :] = F.sigmoid(outputs[:, :, -1, :, :])
 
                 pred = outputs.detach().cpu()
                 true = batch_y.detach().cpu()
 
-                loss = criterion(pred[:, :, -1, :, :], true[:, :, -1, :, :])
+                loss = criterion(pred[:, :, -1, :, :], true[:, :, self.args.target_index, :, :])
 
                 total_loss.append(loss)
         total_loss = np.average(total_loss)
@@ -95,11 +93,11 @@ class Exp_flame(Exp_Basic):
                 model_optim.zero_grad()
                 batch_x = batch_x.float().to(self.device)
                 batch_y = batch_y.float().to(self.device)
-
-                outputs = self.model(batch_x[:, :, [i for i in range(self.args.enc_in + 2) if i not in [2, 3]], :, :])
+                
+                outputs = self.model(batch_x[:, :, [i for i in range(self.args.enc_in + len(self.invalid_feature_id)) if i not in self.invalid_feature_id], :, :])
                 # outputs[:, :, -1, :, :] = F.sigmoid(outputs[:, :, -1, :, :])
 
-                loss = criterion(outputs[:, :, -1, :, :], batch_y[:, :, -1, :, :])
+                loss = criterion(outputs[:, :, -1, :, :], batch_y[:, :, self.args.target_index, :, :])
                 train_loss.append(loss.item())
 
                 if (i + 1) % 100 == 0:
@@ -143,9 +141,6 @@ class Exp_flame(Exp_Basic):
 
         preds = []
         trues = []
-        folder_path = './test_results/' + setting + '/'
-        if not os.path.exists(folder_path):
-            os.makedirs(folder_path)
 
         self.model.eval()
         with torch.no_grad():
@@ -153,7 +148,7 @@ class Exp_flame(Exp_Basic):
                 batch_x = batch_x.float().to(self.device)
                 batch_y = batch_y.float().to(self.device)
 
-                outputs = self.model(batch_x[:, :, [i for i in range(self.args.enc_in + 2) if i not in [2, 3]], :, :])
+                outputs = self.model(batch_x[:, :, [i for i in range(self.args.enc_in + len(self.invalid_feature_id)) if i not in self.invalid_feature_id], :, :])
                 # outputs[:, :, -1, :, :] = F.sigmoid(outputs[:, :, -1, :, :])
 
                 outputs = outputs.detach().cpu().numpy()
@@ -163,10 +158,11 @@ class Exp_flame(Exp_Basic):
                 true = batch_y
 
                 preds.append(pred[:, :, -1, :, :])
-                trues.append(true[:, :, -1, :, :])
+                trues.append(true[:, :, self.args.target_index, :, :])
 
         preds = np.concatenate(preds, axis=0) # B, T, H, W
-        preds = np.clip(preds, 0, 1)
+        if self.args.target_index == -1:
+            preds = np.clip(preds, 0, 1)
         trues = np.concatenate(trues, axis=0)
         print('test shape:', preds.shape, trues.shape)
 
@@ -230,12 +226,15 @@ class Exp_flame(Exp_Basic):
 
             batch_x = torch.cat(batch_x, dim=0)
 
-            pred = self.model(batch_x[:, :, [i for i in range(self.args.enc_in + 2) if i not in [2, 3]], :, :])
+            pred = self.model(batch_x[:, :, [i for i in range(self.args.enc_in + len(self.invalid_feature_id)) if i not in self.invalid_feature_id], :, :])
             # pred[:, :, -1, :, :] = F.sigmoid(pred[:, :, -1, :, :])
             pred = pred.detach().cpu().numpy()
                 
             print(pred.shape)
             np.save(os.path.join(folder_path, 'pred.npy'), pred)
             dump(index_list, os.path.join(folder_path, 'indexes.joblib'))
+
+        # print('delecting checkpoint')
+        # os.remove(os.path.join('./checkpoints/' + setting, 'checkpoint.pth'))
                 
 
