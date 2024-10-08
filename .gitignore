@@ -1,7 +1,6 @@
 dataset/dataset
 dataset/linear_model.csv
 CONTRIBUTING.md
-LICENSE
 result_flame.txt
 checkpoints
 results
