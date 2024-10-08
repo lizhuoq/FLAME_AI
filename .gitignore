@@ -1,4 +1,5 @@
-dataset
+dataset/dataset
+dataset/linear_model.csv
 CONTRIBUTING.md
 LICENSE
 result_flame.txt
@@ -6,3 +7,4 @@ checkpoints
 results
 pred_results
 slurm*
+temp.ipynb
