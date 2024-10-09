@@ -333,4 +333,4 @@ dependencies:
     - webencodings==0.5.1
     - xlsxwriter==3.2.0
     - yacs==0.1.8
-prefix: /data/home/scv7343/.conda/envs/climsim
+prefix: /data/home/scv7343/.conda/envs/flame
