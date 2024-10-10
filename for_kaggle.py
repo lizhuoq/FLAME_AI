@@ -135,7 +135,9 @@ def submit_api(
         preds = inference(x, 'xi', device)[:pred_len]
         preds = np.clip(preds, 0, 1)
     else:
-        n_ar = pred_len // 20 + 1
+        n_ar = pred_len // 20
+        if pred_len % 20 != 0:
+            n_ar += 1
         preds = []
         for i in range(n_ar):
             xi = inference(x, 'xi', device)
@@ -155,12 +157,12 @@ def submit_api(
 
 if __name__ == '__main__':
     # example
-    breakpoint()
+    # breakpoint()
     theta = np.fromfile('dataset/dataset/test/theta_K_id098830.dat', dtype='<f4').reshape(5, 113, 32)
     ustar = np.fromfile('dataset/dataset/test/ustar_ms-1_id098830.dat', dtype='<f4').reshape(5, 113, 32)
     xi = np.fromfile('dataset/dataset/test/xi_id098830.dat', dtype='<f4').reshape(5, 113, 32)
-    submit_api(theta, ustar, xi, 25, 'pred.npy', 'gpu')
+    submit_api(theta, ustar, xi, 40, 'pred.npy', 'cpu')
 
-    # download
-    download_checkpoints(token='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') # Private
-    download_checkpoints() # Public
+    # # download
+    # download_checkpoints(token='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') # Private
+    # download_checkpoints() # Public

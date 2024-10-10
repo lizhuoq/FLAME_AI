@@ -1,21 +1,20 @@
 # 2024 FLAME AI Challenge  
-[Chinese Readme](./README_zh.md)
-## configuration environment
+## 配置环境  
 ```bash
 git clone https://github.com/lizhuoq/FLAME_AI.git
 cd FLAME_AI
 conda env create -f environment.yml
 conda activate flame
 ```
-## Interface for testing
-The experiments in this repository were run on NVIDIA Tesla V100-SXM2 32GB Gpus
-### Step 1: Download the weight file (requires about 160G of storage space, requires networking)
+## 用于测试的接口
+本仓库的实验是在NVIDIA Tesla V100-SXM2 32GB GPU上运行的
+### 第一步：下载权重文件（需要大约160G的存储空间，需要联网）
 ```python
 from for_kaggle import download_checkpoints
 download_checkpoints('checkpoints')
 ```
-### Step 2: Inference
-Inference requires at least 32 G of memory
+### 第二步：推理
+推理至少需要32G的内存
 ```python
 from for_kaggle import submit_api
 # example
@@ -24,7 +23,7 @@ ustar = np.fromfile('dataset/dataset/test/ustar_ms-1_id098830.dat', dtype='<f4')
 xi = np.fromfile('dataset/dataset/test/xi_id098830.dat', dtype='<f4').reshape(5, 113, 32)
 submit_api(theta, ustar, xi, 40, 'pred.npy', 'cpu')
 ```
-- The parameters of `submit_api`: `theta`, `ustar`, and `xi`, are required to have a shape of (5, 113, 32). The parameter `pred_len` can be set to any arbitrary positive integer, `save_path` is the path where the prediction file will be saved, and `device` can only be set to either `gpu` or `cpu`. The return value has a shape of (pred_len, 113, 32). (Note: This function does not require the `alpha` and `u` parameters as inputs,  and `submit_api` does not support batch operation, so only one time series can be tested at a time.)
+- `submit_api`的参数，`theta`，`ustar`，`xi`要求shape为（5，113，32），`pred_len`可以人为设置为任意大的正整数，`save_path`为预测文件保存的路径，`device`只可以设置为`gpu`或者`cpu`，返回值的shaope为（pred_len，113，32）。（注意：该函数不需要输入`alpha`和`u`参数，且`submit_api`不支持batch操作，因此一次只能测试一个时间序列）
 ```
 def submit_api(
         theta: np.ndarray, 
@@ -35,10 +34,10 @@ def submit_api(
         device: str = 'cpu', 
 ) -> np.ndarray:
 ```
-- Read prediction file
+- 读取预测文件
 ```python
 import numpy as np
 pred = np.load(save_path) # shape: pred_len, 113, 32
 ```
-### contact information
+### 联系方式
 m15004059308@163.com
