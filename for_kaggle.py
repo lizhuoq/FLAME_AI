@@ -115,7 +115,7 @@ def submit_api(
         ustar: np.ndarray, 
         xi: np.ndarray, 
         pred_len: int, 
-        save_path = str, 
+        save_path: str, 
         device: str = 'cpu', 
 ) -> np.ndarray:
     '''
