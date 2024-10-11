@@ -1,0 +1,1241 @@
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf0_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 72.8170599937439
+Epoch: 1, Steps: 63 | Train Loss: 0.0345387 Vali Loss: 0.0214299 Test Loss: 0.0214299
+Validation loss decreased (inf --> 0.021430).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 69.52748680114746
+Epoch: 2, Steps: 63 | Train Loss: 0.0185186 Vali Loss: 0.0117429 Test Loss: 0.0117429
+Validation loss decreased (0.021430 --> 0.011743).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.25052165985107
+Epoch: 3, Steps: 63 | Train Loss: 0.0118875 Vali Loss: 0.0106581 Test Loss: 0.0106581
+Validation loss decreased (0.011743 --> 0.010658).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 69.20540976524353
+Epoch: 4, Steps: 63 | Train Loss: 0.0110949 Vali Loss: 0.0103262 Test Loss: 0.0103262
+Validation loss decreased (0.010658 --> 0.010326).  Saving model ...
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.15983009338379
+Epoch: 5, Steps: 63 | Train Loss: 0.0106297 Vali Loss: 0.0105247 Test Loss: 0.0105247
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.20813179016113
+Epoch: 6, Steps: 63 | Train Loss: 0.0104233 Vali Loss: 0.0112398 Test Loss: 0.0112398
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.23167586326599
+Epoch: 7, Steps: 63 | Train Loss: 0.0103337 Vali Loss: 0.0101053 Test Loss: 0.0101053
+Validation loss decreased (0.010326 --> 0.010105).  Saving model ...
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 69.18422365188599
+Epoch: 8, Steps: 63 | Train Loss: 0.0101410 Vali Loss: 0.0099942 Test Loss: 0.0099942
+Validation loss decreased (0.010105 --> 0.009994).  Saving model ...
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 69.16884255409241
+Epoch: 9, Steps: 63 | Train Loss: 0.0100041 Vali Loss: 0.0098868 Test Loss: 0.0098868
+Validation loss decreased (0.009994 --> 0.009887).  Saving model ...
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.18153858184814
+Epoch: 10, Steps: 63 | Train Loss: 0.0098214 Vali Loss: 0.0101027 Test Loss: 0.0101027
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0003184157475180208
+Epoch: 11 cost time: 69.1877589225769
+Epoch: 11, Steps: 63 | Train Loss: 0.0096718 Vali Loss: 0.0099354 Test Loss: 0.0099354
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0002730670898658255
+Epoch: 12 cost time: 69.19811272621155
+Epoch: 12, Steps: 63 | Train Loss: 0.0095022 Vali Loss: 0.0099736 Test Loss: 0.0099736
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00022693291013417452
+Epoch: 13 cost time: 69.21821141242981
+Epoch: 13, Steps: 63 | Train Loss: 0.0093798 Vali Loss: 0.0101659 Test Loss: 0.0101659
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0001815842524819793
+Epoch: 14 cost time: 69.2294270992279
+Epoch: 14, Steps: 63 | Train Loss: 0.0092128 Vali Loss: 0.0103493 Test Loss: 0.0103493
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf0_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:0.009886149317026138
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        -1                  
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>inference : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf0_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+loading model
+(27, 20, 1, 113, 32)
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf1_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 71.19017124176025
+Epoch: 1, Steps: 63 | Train Loss: 0.0346775 Vali Loss: 0.0203185 Test Loss: 0.0203185
+Validation loss decreased (inf --> 0.020318).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 69.56882953643799
+Epoch: 2, Steps: 63 | Train Loss: 0.0185864 Vali Loss: 0.0102971 Test Loss: 0.0102971
+Validation loss decreased (0.020318 --> 0.010297).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.26158118247986
+Epoch: 3, Steps: 63 | Train Loss: 0.0119318 Vali Loss: 0.0101789 Test Loss: 0.0101789
+Validation loss decreased (0.010297 --> 0.010179).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 69.31550478935242
+Epoch: 4, Steps: 63 | Train Loss: 0.0112145 Vali Loss: 0.0096680 Test Loss: 0.0096680
+Validation loss decreased (0.010179 --> 0.009668).  Saving model ...
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.2504985332489
+Epoch: 5, Steps: 63 | Train Loss: 0.0108161 Vali Loss: 0.0102357 Test Loss: 0.0102357
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.17732286453247
+Epoch: 6, Steps: 63 | Train Loss: 0.0105631 Vali Loss: 0.0100494 Test Loss: 0.0100494
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.20878410339355
+Epoch: 7, Steps: 63 | Train Loss: 0.0103945 Vali Loss: 0.0093125 Test Loss: 0.0093125
+Validation loss decreased (0.009668 --> 0.009312).  Saving model ...
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 69.1595561504364
+Epoch: 8, Steps: 63 | Train Loss: 0.0103182 Vali Loss: 0.0089617 Test Loss: 0.0089617
+Validation loss decreased (0.009312 --> 0.008962).  Saving model ...
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 69.1313579082489
+Epoch: 9, Steps: 63 | Train Loss: 0.0101261 Vali Loss: 0.0089377 Test Loss: 0.0089377
+Validation loss decreased (0.008962 --> 0.008938).  Saving model ...
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.14434623718262
+Epoch: 10, Steps: 63 | Train Loss: 0.0099618 Vali Loss: 0.0091870 Test Loss: 0.0091870
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0003184157475180208
+Epoch: 11 cost time: 69.12731838226318
+Epoch: 11, Steps: 63 | Train Loss: 0.0098274 Vali Loss: 0.0090628 Test Loss: 0.0090628
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0002730670898658255
+Epoch: 12 cost time: 69.1406774520874
+Epoch: 12, Steps: 63 | Train Loss: 0.0096763 Vali Loss: 0.0088576 Test Loss: 0.0088576
+Validation loss decreased (0.008938 --> 0.008858).  Saving model ...
+Updating learning rate to 0.00022693291013417452
+Epoch: 13 cost time: 69.12497019767761
+Epoch: 13, Steps: 63 | Train Loss: 0.0095809 Vali Loss: 0.0093353 Test Loss: 0.0093353
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0001815842524819793
+Epoch: 14 cost time: 69.17356705665588
+Epoch: 14, Steps: 63 | Train Loss: 0.0094261 Vali Loss: 0.0093307 Test Loss: 0.0093307
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00013856541105586545
+Epoch: 15 cost time: 69.19813132286072
+Epoch: 15, Steps: 63 | Train Loss: 0.0092862 Vali Loss: 0.0094711 Test Loss: 0.0094711
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 9.934134090518593e-05
+Epoch: 16 cost time: 69.22938513755798
+Epoch: 16, Steps: 63 | Train Loss: 0.0091712 Vali Loss: 0.0093490 Test Loss: 0.0093490
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 6.524777069483526e-05
+Epoch: 17 cost time: 69.19329881668091
+Epoch: 17, Steps: 63 | Train Loss: 0.0090815 Vali Loss: 0.0092172 Test Loss: 0.0092172
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf1_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:0.008863185532391071
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        -1                  
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>inference : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf1_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+loading model
+(27, 20, 1, 113, 32)
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf2_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 71.12041211128235
+Epoch: 1, Steps: 63 | Train Loss: 0.0338464 Vali Loss: 0.0268119 Test Loss: 0.0268119
+Validation loss decreased (inf --> 0.026812).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 69.60224175453186
+Epoch: 2, Steps: 63 | Train Loss: 0.0182155 Vali Loss: 0.0137581 Test Loss: 0.0137581
+Validation loss decreased (0.026812 --> 0.013758).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.17507147789001
+Epoch: 3, Steps: 63 | Train Loss: 0.0114586 Vali Loss: 0.0135193 Test Loss: 0.0135193
+Validation loss decreased (0.013758 --> 0.013519).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 69.17808628082275
+Epoch: 4, Steps: 63 | Train Loss: 0.0106609 Vali Loss: 0.0136279 Test Loss: 0.0136279
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.19659447669983
+Epoch: 5, Steps: 63 | Train Loss: 0.0102672 Vali Loss: 0.0127960 Test Loss: 0.0127960
+Validation loss decreased (0.013519 --> 0.012796).  Saving model ...
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.09557461738586
+Epoch: 6, Steps: 63 | Train Loss: 0.0101426 Vali Loss: 0.0126433 Test Loss: 0.0126433
+Validation loss decreased (0.012796 --> 0.012643).  Saving model ...
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.08195614814758
+Epoch: 7, Steps: 63 | Train Loss: 0.0100152 Vali Loss: 0.0131623 Test Loss: 0.0131623
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 69.11580657958984
+Epoch: 8, Steps: 63 | Train Loss: 0.0097968 Vali Loss: 0.0127368 Test Loss: 0.0127368
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 69.14482522010803
+Epoch: 9, Steps: 63 | Train Loss: 0.0096453 Vali Loss: 0.0128116 Test Loss: 0.0128116
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.15815782546997
+Epoch: 10, Steps: 63 | Train Loss: 0.0095297 Vali Loss: 0.0127751 Test Loss: 0.0127751
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0003184157475180208
+Epoch: 11 cost time: 69.13839054107666
+Epoch: 11, Steps: 63 | Train Loss: 0.0094279 Vali Loss: 0.0130955 Test Loss: 0.0130955
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf2_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:0.01260247640311718
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        -1                  
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>inference : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf2_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+loading model
+(27, 20, 1, 113, 32)
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf3_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 71.13577508926392
+Epoch: 1, Steps: 63 | Train Loss: 0.0345790 Vali Loss: 0.0209081 Test Loss: 0.0209081
+Validation loss decreased (inf --> 0.020908).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 70.52300310134888
+Epoch: 2, Steps: 63 | Train Loss: 0.0184891 Vali Loss: 0.0106772 Test Loss: 0.0106772
+Validation loss decreased (0.020908 --> 0.010677).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.2001895904541
+Epoch: 3, Steps: 63 | Train Loss: 0.0118291 Vali Loss: 0.0095734 Test Loss: 0.0095734
+Validation loss decreased (0.010677 --> 0.009573).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 69.39688563346863
+Epoch: 4, Steps: 63 | Train Loss: 0.0110488 Vali Loss: 0.0096056 Test Loss: 0.0096056
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.18150591850281
+Epoch: 5, Steps: 63 | Train Loss: 0.0106850 Vali Loss: 0.0094930 Test Loss: 0.0094930
+Validation loss decreased (0.009573 --> 0.009493).  Saving model ...
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.17242121696472
+Epoch: 6, Steps: 63 | Train Loss: 0.0104696 Vali Loss: 0.0099406 Test Loss: 0.0099406
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.23480272293091
+Epoch: 7, Steps: 63 | Train Loss: 0.0104063 Vali Loss: 0.0090866 Test Loss: 0.0090866
+Validation loss decreased (0.009493 --> 0.009087).  Saving model ...
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 69.3416519165039
+Epoch: 8, Steps: 63 | Train Loss: 0.0101871 Vali Loss: 0.0092662 Test Loss: 0.0092662
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 69.23028016090393
+Epoch: 9, Steps: 63 | Train Loss: 0.0100850 Vali Loss: 0.0094288 Test Loss: 0.0094288
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.24610710144043
+Epoch: 10, Steps: 63 | Train Loss: 0.0098492 Vali Loss: 0.0092998 Test Loss: 0.0092998
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0003184157475180208
+Epoch: 11 cost time: 69.23514795303345
+Epoch: 11, Steps: 63 | Train Loss: 0.0098352 Vali Loss: 0.0091942 Test Loss: 0.0091942
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002730670898658255
+Epoch: 12 cost time: 69.2371666431427
+Epoch: 12, Steps: 63 | Train Loss: 0.0096046 Vali Loss: 0.0092629 Test Loss: 0.0092629
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf3_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:0.009060581214725971
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        -1                  
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>inference : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf3_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+loading model
+(27, 20, 1, 113, 32)
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf4_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 71.1409273147583
+Epoch: 1, Steps: 63 | Train Loss: 0.0340095 Vali Loss: 0.0254722 Test Loss: 0.0254722
+Validation loss decreased (inf --> 0.025472).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 69.72391891479492
+Epoch: 2, Steps: 63 | Train Loss: 0.0180078 Vali Loss: 0.0127885 Test Loss: 0.0127885
+Validation loss decreased (0.025472 --> 0.012789).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.33146691322327
+Epoch: 3, Steps: 63 | Train Loss: 0.0115112 Vali Loss: 0.0113620 Test Loss: 0.0113620
+Validation loss decreased (0.012789 --> 0.011362).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 69.20599913597107
+Epoch: 4, Steps: 63 | Train Loss: 0.0107992 Vali Loss: 0.0110310 Test Loss: 0.0110310
+Validation loss decreased (0.011362 --> 0.011031).  Saving model ...
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.23057913780212
+Epoch: 5, Steps: 63 | Train Loss: 0.0104775 Vali Loss: 0.0109371 Test Loss: 0.0109371
+Validation loss decreased (0.011031 --> 0.010937).  Saving model ...
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.16246151924133
+Epoch: 6, Steps: 63 | Train Loss: 0.0103984 Vali Loss: 0.0109322 Test Loss: 0.0109322
+Validation loss decreased (0.010937 --> 0.010932).  Saving model ...
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.15343523025513
+Epoch: 7, Steps: 63 | Train Loss: 0.0101946 Vali Loss: 0.0109046 Test Loss: 0.0109046
+Validation loss decreased (0.010932 --> 0.010905).  Saving model ...
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 69.09309911727905
+Epoch: 8, Steps: 63 | Train Loss: 0.0100513 Vali Loss: 0.0113751 Test Loss: 0.0113751
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 69.04538321495056
+Epoch: 9, Steps: 63 | Train Loss: 0.0098862 Vali Loss: 0.0109841 Test Loss: 0.0109841
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.07261943817139
+Epoch: 10, Steps: 63 | Train Loss: 0.0097466 Vali Loss: 0.0108387 Test Loss: 0.0108387
+Validation loss decreased (0.010905 --> 0.010839).  Saving model ...
+Updating learning rate to 0.0003184157475180208
+Epoch: 11 cost time: 69.05734014511108
+Epoch: 11, Steps: 63 | Train Loss: 0.0095354 Vali Loss: 0.0109866 Test Loss: 0.0109866
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002730670898658255
+Epoch: 12 cost time: 69.13191342353821
+Epoch: 12, Steps: 63 | Train Loss: 0.0094195 Vali Loss: 0.0109153 Test Loss: 0.0109153
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00022693291013417452
+Epoch: 13 cost time: 69.14366006851196
+Epoch: 13, Steps: 63 | Train Loss: 0.0093241 Vali Loss: 0.0112152 Test Loss: 0.0112152
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0001815842524819793
+Epoch: 14 cost time: 69.16401600837708
+Epoch: 14, Steps: 63 | Train Loss: 0.0091163 Vali Loss: 0.0113139 Test Loss: 0.0113139
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00013856541105586545
+Epoch: 15 cost time: 69.18581247329712
+Epoch: 15, Steps: 63 | Train Loss: 0.0089580 Vali Loss: 0.0111649 Test Loss: 0.0111649
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf4_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:0.01082600187510252
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        -1                  
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>inference : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf4_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+loading model
+(27, 20, 1, 113, 32)
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf5_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 71.70391201972961
+Epoch: 1, Steps: 63 | Train Loss: 0.0338056 Vali Loss: 0.0271762 Test Loss: 0.0271762
+Validation loss decreased (inf --> 0.027176).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 77.90236735343933
+Epoch: 2, Steps: 63 | Train Loss: 0.0180709 Vali Loss: 0.0141691 Test Loss: 0.0141691
+Validation loss decreased (0.027176 --> 0.014169).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.21457242965698
+Epoch: 3, Steps: 63 | Train Loss: 0.0113447 Vali Loss: 0.0127771 Test Loss: 0.0127771
+Validation loss decreased (0.014169 --> 0.012777).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 79.26294994354248
+Epoch: 4, Steps: 63 | Train Loss: 0.0108152 Vali Loss: 0.0121657 Test Loss: 0.0121657
+Validation loss decreased (0.012777 --> 0.012166).  Saving model ...
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.23167705535889
+Epoch: 5, Steps: 63 | Train Loss: 0.0103435 Vali Loss: 0.0119364 Test Loss: 0.0119364
+Validation loss decreased (0.012166 --> 0.011936).  Saving model ...
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.2335422039032
+Epoch: 6, Steps: 63 | Train Loss: 0.0101854 Vali Loss: 0.0121938 Test Loss: 0.0121938
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.23179721832275
+Epoch: 7, Steps: 63 | Train Loss: 0.0099639 Vali Loss: 0.0119390 Test Loss: 0.0119390
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 69.23659014701843
+Epoch: 8, Steps: 63 | Train Loss: 0.0098225 Vali Loss: 0.0122146 Test Loss: 0.0122146
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 69.24811482429504
+Epoch: 9, Steps: 63 | Train Loss: 0.0097753 Vali Loss: 0.0122783 Test Loss: 0.0122783
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.27845454216003
+Epoch: 10, Steps: 63 | Train Loss: 0.0096595 Vali Loss: 0.0123820 Test Loss: 0.0123820
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf5_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:0.011941131204366684
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        -1                  
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>inference : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf5_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+loading model
+(27, 20, 1, 113, 32)
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf6_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 71.19703674316406
+Epoch: 1, Steps: 63 | Train Loss: 0.0344153 Vali Loss: 0.0229827 Test Loss: 0.0229827
+Validation loss decreased (inf --> 0.022983).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 69.54145407676697
+Epoch: 2, Steps: 63 | Train Loss: 0.0182523 Vali Loss: 0.0129392 Test Loss: 0.0129392
+Validation loss decreased (0.022983 --> 0.012939).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.36799907684326
+Epoch: 3, Steps: 63 | Train Loss: 0.0117726 Vali Loss: 0.0112092 Test Loss: 0.0112092
+Validation loss decreased (0.012939 --> 0.011209).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 69.16829228401184
+Epoch: 4, Steps: 63 | Train Loss: 0.0111516 Vali Loss: 0.0102535 Test Loss: 0.0102535
+Validation loss decreased (0.011209 --> 0.010254).  Saving model ...
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.14881634712219
+Epoch: 5, Steps: 63 | Train Loss: 0.0105987 Vali Loss: 0.0101959 Test Loss: 0.0101959
+Validation loss decreased (0.010254 --> 0.010196).  Saving model ...
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.10383725166321
+Epoch: 6, Steps: 63 | Train Loss: 0.0104435 Vali Loss: 0.0106444 Test Loss: 0.0106444
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.14422965049744
+Epoch: 7, Steps: 63 | Train Loss: 0.0102430 Vali Loss: 0.0101037 Test Loss: 0.0101037
+Validation loss decreased (0.010196 --> 0.010104).  Saving model ...
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 69.07915043830872
+Epoch: 8, Steps: 63 | Train Loss: 0.0102462 Vali Loss: 0.0100679 Test Loss: 0.0100679
+Validation loss decreased (0.010104 --> 0.010068).  Saving model ...
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 69.09552454948425
+Epoch: 9, Steps: 63 | Train Loss: 0.0100139 Vali Loss: 0.0101858 Test Loss: 0.0101858
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.06650876998901
+Epoch: 10, Steps: 63 | Train Loss: 0.0098322 Vali Loss: 0.0102844 Test Loss: 0.0102844
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003184157475180208
+Epoch: 11 cost time: 69.07707095146179
+Epoch: 11, Steps: 63 | Train Loss: 0.0096663 Vali Loss: 0.0108482 Test Loss: 0.0108482
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0002730670898658255
+Epoch: 12 cost time: 69.1213607788086
+Epoch: 12, Steps: 63 | Train Loss: 0.0095224 Vali Loss: 0.0104064 Test Loss: 0.0104064
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00022693291013417452
+Epoch: 13 cost time: 69.15204644203186
+Epoch: 13, Steps: 63 | Train Loss: 0.0094045 Vali Loss: 0.0103541 Test Loss: 0.0103541
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf6_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:0.010067920200526714
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        -1                  
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>inference : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf6_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+loading model
+(27, 20, 1, 113, 32)
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf7_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 71.13259291648865
+Epoch: 1, Steps: 63 | Train Loss: 0.0343257 Vali Loss: 0.0265046 Test Loss: 0.0265046
+Validation loss decreased (inf --> 0.026505).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 69.70259118080139
+Epoch: 2, Steps: 63 | Train Loss: 0.0172414 Vali Loss: 0.0164562 Test Loss: 0.0164562
+Validation loss decreased (0.026505 --> 0.016456).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.3320906162262
+Epoch: 3, Steps: 63 | Train Loss: 0.0113564 Vali Loss: 0.0140421 Test Loss: 0.0140421
+Validation loss decreased (0.016456 --> 0.014042).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 69.19478058815002
+Epoch: 4, Steps: 63 | Train Loss: 0.0109779 Vali Loss: 0.0128070 Test Loss: 0.0128070
+Validation loss decreased (0.014042 --> 0.012807).  Saving model ...
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.32233715057373
+Epoch: 5, Steps: 63 | Train Loss: 0.0104512 Vali Loss: 0.0120923 Test Loss: 0.0120923
+Validation loss decreased (0.012807 --> 0.012092).  Saving model ...
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.22059202194214
+Epoch: 6, Steps: 63 | Train Loss: 0.0102036 Vali Loss: 0.0116715 Test Loss: 0.0116715
+Validation loss decreased (0.012092 --> 0.011672).  Saving model ...
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.25359320640564
+Epoch: 7, Steps: 63 | Train Loss: 0.0100748 Vali Loss: 0.0117984 Test Loss: 0.0117984
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 69.20480036735535
+Epoch: 8, Steps: 63 | Train Loss: 0.0099805 Vali Loss: 0.0117099 Test Loss: 0.0117099
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 69.22222304344177
+Epoch: 9, Steps: 63 | Train Loss: 0.0098036 Vali Loss: 0.0119839 Test Loss: 0.0119839
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.23893594741821
+Epoch: 10, Steps: 63 | Train Loss: 0.0096353 Vali Loss: 0.0116975 Test Loss: 0.0116975
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0003184157475180208
+Epoch: 11 cost time: 69.17600750923157
+Epoch: 11, Steps: 63 | Train Loss: 0.0095459 Vali Loss: 0.0120839 Test Loss: 0.0120839
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf7_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:0.011534183286130428
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        -1                  
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>inference : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf7_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+loading model
+(27, 20, 1, 113, 32)
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf8_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 71.6338701248169
+Epoch: 1, Steps: 63 | Train Loss: 0.0343372 Vali Loss: 0.0233773 Test Loss: 0.0233773
+Validation loss decreased (inf --> 0.023377).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 69.74373412132263
+Epoch: 2, Steps: 63 | Train Loss: 0.0179752 Vali Loss: 0.0126829 Test Loss: 0.0126829
+Validation loss decreased (0.023377 --> 0.012683).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.25375199317932
+Epoch: 3, Steps: 63 | Train Loss: 0.0117440 Vali Loss: 0.0115924 Test Loss: 0.0115924
+Validation loss decreased (0.012683 --> 0.011592).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 69.19577193260193
+Epoch: 4, Steps: 63 | Train Loss: 0.0110199 Vali Loss: 0.0115250 Test Loss: 0.0115250
+Validation loss decreased (0.011592 --> 0.011525).  Saving model ...
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.16770672798157
+Epoch: 5, Steps: 63 | Train Loss: 0.0104919 Vali Loss: 0.0113089 Test Loss: 0.0113089
+Validation loss decreased (0.011525 --> 0.011309).  Saving model ...
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.244699716568
+Epoch: 6, Steps: 63 | Train Loss: 0.0102934 Vali Loss: 0.0113260 Test Loss: 0.0113260
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.17507719993591
+Epoch: 7, Steps: 63 | Train Loss: 0.0101242 Vali Loss: 0.0112758 Test Loss: 0.0112758
+Validation loss decreased (0.011309 --> 0.011276).  Saving model ...
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 69.1527361869812
+Epoch: 8, Steps: 63 | Train Loss: 0.0101034 Vali Loss: 0.0119925 Test Loss: 0.0119925
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 69.17767930030823
+Epoch: 9, Steps: 63 | Train Loss: 0.0099377 Vali Loss: 0.0112125 Test Loss: 0.0112125
+Validation loss decreased (0.011276 --> 0.011212).  Saving model ...
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.13608050346375
+Epoch: 10, Steps: 63 | Train Loss: 0.0098574 Vali Loss: 0.0109948 Test Loss: 0.0109948
+Validation loss decreased (0.011212 --> 0.010995).  Saving model ...
+Updating learning rate to 0.0003184157475180208
+Epoch: 11 cost time: 69.17192101478577
+Epoch: 11, Steps: 63 | Train Loss: 0.0096078 Vali Loss: 0.0109840 Test Loss: 0.0109840
+Validation loss decreased (0.010995 --> 0.010984).  Saving model ...
+Updating learning rate to 0.0002730670898658255
+Epoch: 12 cost time: 69.14461088180542
+Epoch: 12, Steps: 63 | Train Loss: 0.0094486 Vali Loss: 0.0110952 Test Loss: 0.0110952
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00022693291013417452
+Epoch: 13 cost time: 69.1504909992218
+Epoch: 13, Steps: 63 | Train Loss: 0.0094018 Vali Loss: 0.0111349 Test Loss: 0.0111349
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0001815842524819793
+Epoch: 14 cost time: 69.19186973571777
+Epoch: 14, Steps: 63 | Train Loss: 0.0092041 Vali Loss: 0.0111180 Test Loss: 0.0111180
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00013856541105586545
+Epoch: 15 cost time: 69.22175765037537
+Epoch: 15, Steps: 63 | Train Loss: 0.0090872 Vali Loss: 0.0111686 Test Loss: 0.0111686
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 9.934134090518593e-05
+Epoch: 16 cost time: 69.24918365478516
+Epoch: 16, Steps: 63 | Train Loss: 0.0090066 Vali Loss: 0.0112392 Test Loss: 0.0112392
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf8_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:0.010966787114739418
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        -1                  
+  Model ID:           enc_in_23_target_xi Model:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>inference : flame_enc_in_23_target_xi_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf8_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+loading model
+(27, 20, 1, 113, 32)

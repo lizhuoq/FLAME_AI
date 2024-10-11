@@ -1,0 +1,1033 @@
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_thetaModel:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf0_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 74.24367952346802
+Epoch: 1, Steps: 63 | Train Loss: 0.8663201 Vali Loss: 0.3658941 Test Loss: 0.3658941
+Validation loss decreased (inf --> 0.365894).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 69.9107654094696
+Epoch: 2, Steps: 63 | Train Loss: 0.5208752 Vali Loss: 0.3450397 Test Loss: 0.3450397
+Validation loss decreased (0.365894 --> 0.345040).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.75856447219849
+Epoch: 3, Steps: 63 | Train Loss: 0.5012756 Vali Loss: 0.3456206 Test Loss: 0.3456206
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 69.85474872589111
+Epoch: 4, Steps: 63 | Train Loss: 0.4899257 Vali Loss: 0.3334748 Test Loss: 0.3334748
+Validation loss decreased (0.345040 --> 0.333475).  Saving model ...
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.79534196853638
+Epoch: 5, Steps: 63 | Train Loss: 0.4805796 Vali Loss: 0.3294557 Test Loss: 0.3294557
+Validation loss decreased (0.333475 --> 0.329456).  Saving model ...
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.79759931564331
+Epoch: 6, Steps: 63 | Train Loss: 0.4772936 Vali Loss: 0.3251172 Test Loss: 0.3251172
+Validation loss decreased (0.329456 --> 0.325117).  Saving model ...
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.81465911865234
+Epoch: 7, Steps: 63 | Train Loss: 0.4733947 Vali Loss: 0.3264547 Test Loss: 0.3264547
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 69.97531056404114
+Epoch: 8, Steps: 63 | Train Loss: 0.4718597 Vali Loss: 0.3357915 Test Loss: 0.3357915
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 70.17280745506287
+Epoch: 9, Steps: 63 | Train Loss: 0.4715054 Vali Loss: 0.3239615 Test Loss: 0.3239615
+Validation loss decreased (0.325117 --> 0.323961).  Saving model ...
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.85954308509827
+Epoch: 10, Steps: 63 | Train Loss: 0.4673966 Vali Loss: 0.3236789 Test Loss: 0.3236789
+Validation loss decreased (0.323961 --> 0.323679).  Saving model ...
+Updating learning rate to 0.0003184157475180208
+Epoch: 11 cost time: 69.78885436058044
+Epoch: 11, Steps: 63 | Train Loss: 0.4664000 Vali Loss: 0.3282956 Test Loss: 0.3282956
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002730670898658255
+Epoch: 12 cost time: 69.80160593986511
+Epoch: 12, Steps: 63 | Train Loss: 0.4632824 Vali Loss: 0.3230265 Test Loss: 0.3230265
+Validation loss decreased (0.323679 --> 0.323026).  Saving model ...
+Updating learning rate to 0.00022693291013417452
+Epoch: 13 cost time: 69.78209042549133
+Epoch: 13, Steps: 63 | Train Loss: 0.4632051 Vali Loss: 0.3231119 Test Loss: 0.3231119
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0001815842524819793
+Epoch: 14 cost time: 69.8967833518982
+Epoch: 14, Steps: 63 | Train Loss: 0.4585754 Vali Loss: 0.3264247 Test Loss: 0.3264247
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00013856541105586545
+Epoch: 15 cost time: 69.9692850112915
+Epoch: 15, Steps: 63 | Train Loss: 0.4563624 Vali Loss: 0.3238934 Test Loss: 0.3238934
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 9.934134090518593e-05
+Epoch: 16 cost time: 70.02017617225647
+Epoch: 16, Steps: 63 | Train Loss: 0.4534810 Vali Loss: 0.3243086 Test Loss: 0.3243086
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 6.524777069483526e-05
+Epoch: 17 cost time: 70.08817100524902
+Epoch: 17, Steps: 63 | Train Loss: 0.4514365 Vali Loss: 0.3248705 Test Loss: 0.3248705
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf0_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:0.3235628008842468
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_thetaModel:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf1_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 72.70362377166748
+Epoch: 1, Steps: 63 | Train Loss: 0.8702520 Vali Loss: 0.3309884 Test Loss: 0.3309884
+Validation loss decreased (inf --> 0.330988).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 70.16336393356323
+Epoch: 2, Steps: 63 | Train Loss: 0.5267083 Vali Loss: 0.3086399 Test Loss: 0.3086399
+Validation loss decreased (0.330988 --> 0.308640).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.77151894569397
+Epoch: 3, Steps: 63 | Train Loss: 0.5053321 Vali Loss: 0.2995080 Test Loss: 0.2995080
+Validation loss decreased (0.308640 --> 0.299508).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 69.81564021110535
+Epoch: 4, Steps: 63 | Train Loss: 0.4942455 Vali Loss: 0.2943648 Test Loss: 0.2943648
+Validation loss decreased (0.299508 --> 0.294365).  Saving model ...
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.80059432983398
+Epoch: 5, Steps: 63 | Train Loss: 0.4857637 Vali Loss: 0.2888050 Test Loss: 0.2888050
+Validation loss decreased (0.294365 --> 0.288805).  Saving model ...
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.838214635849
+Epoch: 6, Steps: 63 | Train Loss: 0.4811570 Vali Loss: 0.2866278 Test Loss: 0.2866278
+Validation loss decreased (0.288805 --> 0.286628).  Saving model ...
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.76414346694946
+Epoch: 7, Steps: 63 | Train Loss: 0.4805201 Vali Loss: 0.2919366 Test Loss: 0.2919366
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 69.90855383872986
+Epoch: 8, Steps: 63 | Train Loss: 0.4767912 Vali Loss: 0.2900337 Test Loss: 0.2900337
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 69.9132730960846
+Epoch: 9, Steps: 63 | Train Loss: 0.4752154 Vali Loss: 0.2862755 Test Loss: 0.2862755
+Validation loss decreased (0.286628 --> 0.286276).  Saving model ...
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.75125074386597
+Epoch: 10, Steps: 63 | Train Loss: 0.4713685 Vali Loss: 0.2842770 Test Loss: 0.2842770
+Validation loss decreased (0.286276 --> 0.284277).  Saving model ...
+Updating learning rate to 0.0003184157475180208
+Epoch: 11 cost time: 69.75969910621643
+Epoch: 11, Steps: 63 | Train Loss: 0.4705296 Vali Loss: 0.2854867 Test Loss: 0.2854867
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002730670898658255
+Epoch: 12 cost time: 69.79784679412842
+Epoch: 12, Steps: 63 | Train Loss: 0.4677935 Vali Loss: 0.2839617 Test Loss: 0.2839617
+Validation loss decreased (0.284277 --> 0.283962).  Saving model ...
+Updating learning rate to 0.00022693291013417452
+Epoch: 13 cost time: 69.7532205581665
+Epoch: 13, Steps: 63 | Train Loss: 0.4654731 Vali Loss: 0.2837363 Test Loss: 0.2837363
+Validation loss decreased (0.283962 --> 0.283736).  Saving model ...
+Updating learning rate to 0.0001815842524819793
+Epoch: 14 cost time: 69.73851156234741
+Epoch: 14, Steps: 63 | Train Loss: 0.4627630 Vali Loss: 0.2853613 Test Loss: 0.2853613
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00013856541105586545
+Epoch: 15 cost time: 69.85554504394531
+Epoch: 15, Steps: 63 | Train Loss: 0.4605501 Vali Loss: 0.2829298 Test Loss: 0.2829298
+Validation loss decreased (0.283736 --> 0.282930).  Saving model ...
+Updating learning rate to 9.934134090518593e-05
+Epoch: 16 cost time: 69.75632858276367
+Epoch: 16, Steps: 63 | Train Loss: 0.4576312 Vali Loss: 0.2823032 Test Loss: 0.2823032
+Validation loss decreased (0.282930 --> 0.282303).  Saving model ...
+Updating learning rate to 6.524777069483526e-05
+Epoch: 17 cost time: 69.76631021499634
+Epoch: 17, Steps: 63 | Train Loss: 0.4559783 Vali Loss: 0.2820497 Test Loss: 0.2820497
+Validation loss decreased (0.282303 --> 0.282050).  Saving model ...
+Updating learning rate to 3.7445716067596506e-05
+Epoch: 18 cost time: 69.80572032928467
+Epoch: 18, Steps: 63 | Train Loss: 0.4538197 Vali Loss: 0.2827201 Test Loss: 0.2827201
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 1.6881942648911074e-05
+Epoch: 19 cost time: 69.89553618431091
+Epoch: 19, Steps: 63 | Train Loss: 0.4527727 Vali Loss: 0.2801475 Test Loss: 0.2801475
+Validation loss decreased (0.282050 --> 0.280147).  Saving model ...
+Updating learning rate to 4.256725079024554e-06
+Epoch: 20 cost time: 69.83141160011292
+Epoch: 20, Steps: 63 | Train Loss: 0.4523288 Vali Loss: 0.2832670 Test Loss: 0.2832670
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0
+>>>>>>>testing : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf1_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:0.2814536988735199
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_thetaModel:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf2_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 72.25477647781372
+Epoch: 1, Steps: 63 | Train Loss: 0.8758807 Vali Loss: 0.3520473 Test Loss: 0.3520473
+Validation loss decreased (inf --> 0.352047).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 70.14712309837341
+Epoch: 2, Steps: 63 | Train Loss: 0.5222065 Vali Loss: 0.3314381 Test Loss: 0.3314381
+Validation loss decreased (0.352047 --> 0.331438).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.827467918396
+Epoch: 3, Steps: 63 | Train Loss: 0.5008928 Vali Loss: 0.3191603 Test Loss: 0.3191603
+Validation loss decreased (0.331438 --> 0.319160).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 69.82011413574219
+Epoch: 4, Steps: 63 | Train Loss: 0.5029828 Vali Loss: 0.3181114 Test Loss: 0.3181114
+Validation loss decreased (0.319160 --> 0.318111).  Saving model ...
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.90555047988892
+Epoch: 5, Steps: 63 | Train Loss: 0.4863354 Vali Loss: 0.3106030 Test Loss: 0.3106030
+Validation loss decreased (0.318111 --> 0.310603).  Saving model ...
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.82507395744324
+Epoch: 6, Steps: 63 | Train Loss: 0.4785806 Vali Loss: 0.3134339 Test Loss: 0.3134339
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.98384428024292
+Epoch: 7, Steps: 63 | Train Loss: 0.4752052 Vali Loss: 0.3098645 Test Loss: 0.3098645
+Validation loss decreased (0.310603 --> 0.309864).  Saving model ...
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 70.03871726989746
+Epoch: 8, Steps: 63 | Train Loss: 0.4731310 Vali Loss: 0.3174026 Test Loss: 0.3174026
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 70.0386974811554
+Epoch: 9, Steps: 63 | Train Loss: 0.4710125 Vali Loss: 0.3096639 Test Loss: 0.3096639
+Validation loss decreased (0.309864 --> 0.309664).  Saving model ...
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.8245780467987
+Epoch: 10, Steps: 63 | Train Loss: 0.4687579 Vali Loss: 0.3101583 Test Loss: 0.3101583
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0003184157475180208
+Epoch: 11 cost time: 69.84754133224487
+Epoch: 11, Steps: 63 | Train Loss: 0.4684557 Vali Loss: 0.3120715 Test Loss: 0.3120715
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0002730670898658255
+Epoch: 12 cost time: 69.91404294967651
+Epoch: 12, Steps: 63 | Train Loss: 0.4641269 Vali Loss: 0.3086840 Test Loss: 0.3086840
+Validation loss decreased (0.309664 --> 0.308684).  Saving model ...
+Updating learning rate to 0.00022693291013417452
+Epoch: 13 cost time: 69.72920298576355
+Epoch: 13, Steps: 63 | Train Loss: 0.4617948 Vali Loss: 0.3146027 Test Loss: 0.3146027
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0001815842524819793
+Epoch: 14 cost time: 69.76587629318237
+Epoch: 14, Steps: 63 | Train Loss: 0.4591690 Vali Loss: 0.3114013 Test Loss: 0.3114013
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00013856541105586545
+Epoch: 15 cost time: 69.82258677482605
+Epoch: 15, Steps: 63 | Train Loss: 0.4578087 Vali Loss: 0.3113945 Test Loss: 0.3113945
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 9.934134090518593e-05
+Epoch: 16 cost time: 69.83930325508118
+Epoch: 16, Steps: 63 | Train Loss: 0.4550193 Vali Loss: 0.3133030 Test Loss: 0.3133030
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 6.524777069483526e-05
+Epoch: 17 cost time: 69.92417407035828
+Epoch: 17, Steps: 63 | Train Loss: 0.4532378 Vali Loss: 0.3122587 Test Loss: 0.3122587
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf2_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:0.3090650737285614
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_thetaModel:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf3_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 73.04841876029968
+Epoch: 1, Steps: 63 | Train Loss: 0.8302647 Vali Loss: 0.5463412 Test Loss: 0.5463412
+Validation loss decreased (inf --> 0.546341).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 70.17519879341125
+Epoch: 2, Steps: 63 | Train Loss: 0.4960671 Vali Loss: 0.5198410 Test Loss: 0.5198410
+Validation loss decreased (0.546341 --> 0.519841).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.76574182510376
+Epoch: 3, Steps: 63 | Train Loss: 0.4821229 Vali Loss: 0.5180089 Test Loss: 0.5180089
+Validation loss decreased (0.519841 --> 0.518009).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 69.9045398235321
+Epoch: 4, Steps: 63 | Train Loss: 0.4691861 Vali Loss: 0.5008553 Test Loss: 0.5008553
+Validation loss decreased (0.518009 --> 0.500855).  Saving model ...
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.84992790222168
+Epoch: 5, Steps: 63 | Train Loss: 0.4632380 Vali Loss: 0.4893166 Test Loss: 0.4893166
+Validation loss decreased (0.500855 --> 0.489317).  Saving model ...
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.79596471786499
+Epoch: 6, Steps: 63 | Train Loss: 0.4572214 Vali Loss: 0.4838271 Test Loss: 0.4838271
+Validation loss decreased (0.489317 --> 0.483827).  Saving model ...
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.748544216156
+Epoch: 7, Steps: 63 | Train Loss: 0.4552466 Vali Loss: 0.4855691 Test Loss: 0.4855691
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 69.85678672790527
+Epoch: 8, Steps: 63 | Train Loss: 0.4523948 Vali Loss: 0.4806544 Test Loss: 0.4806544
+Validation loss decreased (0.483827 --> 0.480654).  Saving model ...
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 69.75169658660889
+Epoch: 9, Steps: 63 | Train Loss: 0.4502188 Vali Loss: 0.4775294 Test Loss: 0.4775294
+Validation loss decreased (0.480654 --> 0.477529).  Saving model ...
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.7106773853302
+Epoch: 10, Steps: 63 | Train Loss: 0.4475913 Vali Loss: 0.4784344 Test Loss: 0.4784344
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0003184157475180208
+Epoch: 11 cost time: 69.74343776702881
+Epoch: 11, Steps: 63 | Train Loss: 0.4495262 Vali Loss: 0.4779624 Test Loss: 0.4779624
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0002730670898658255
+Epoch: 12 cost time: 69.80189180374146
+Epoch: 12, Steps: 63 | Train Loss: 0.4440679 Vali Loss: 0.4781225 Test Loss: 0.4781225
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00022693291013417452
+Epoch: 13 cost time: 69.87426781654358
+Epoch: 13, Steps: 63 | Train Loss: 0.4418206 Vali Loss: 0.4767531 Test Loss: 0.4767531
+Validation loss decreased (0.477529 --> 0.476753).  Saving model ...
+Updating learning rate to 0.0001815842524819793
+Epoch: 14 cost time: 69.71822381019592
+Epoch: 14, Steps: 63 | Train Loss: 0.4390145 Vali Loss: 0.4802029 Test Loss: 0.4802029
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00013856541105586545
+Epoch: 15 cost time: 69.82484912872314
+Epoch: 15, Steps: 63 | Train Loss: 0.4363476 Vali Loss: 0.4754301 Test Loss: 0.4754301
+Validation loss decreased (0.476753 --> 0.475430).  Saving model ...
+Updating learning rate to 9.934134090518593e-05
+Epoch: 16 cost time: 69.71621608734131
+Epoch: 16, Steps: 63 | Train Loss: 0.4340423 Vali Loss: 0.4780933 Test Loss: 0.4780933
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 6.524777069483526e-05
+Epoch: 17 cost time: 69.87869358062744
+Epoch: 17, Steps: 63 | Train Loss: 0.4319772 Vali Loss: 0.4778417 Test Loss: 0.4778417
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 3.7445716067596506e-05
+Epoch: 18 cost time: 69.93343830108643
+Epoch: 18, Steps: 63 | Train Loss: 0.4302144 Vali Loss: 0.4813032 Test Loss: 0.4813032
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 1.6881942648911074e-05
+Epoch: 19 cost time: 70.05159640312195
+Epoch: 19, Steps: 63 | Train Loss: 0.4291586 Vali Loss: 0.4776121 Test Loss: 0.4776121
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 4.256725079024554e-06
+Epoch: 20 cost time: 70.04667282104492
+Epoch: 20, Steps: 63 | Train Loss: 0.4287862 Vali Loss: 0.4827734 Test Loss: 0.4827734
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf3_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:0.47634807229042053
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_thetaModel:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf4_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 72.24236607551575
+Epoch: 1, Steps: 63 | Train Loss: 0.9055961 Vali Loss: 0.1496647 Test Loss: 0.1496647
+Validation loss decreased (inf --> 0.149665).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 70.21195912361145
+Epoch: 2, Steps: 63 | Train Loss: 0.5502799 Vali Loss: 0.1169607 Test Loss: 0.1169607
+Validation loss decreased (0.149665 --> 0.116961).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.91622185707092
+Epoch: 3, Steps: 63 | Train Loss: 0.5269674 Vali Loss: 0.1099841 Test Loss: 0.1099841
+Validation loss decreased (0.116961 --> 0.109984).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 69.91936016082764
+Epoch: 4, Steps: 63 | Train Loss: 0.5168146 Vali Loss: 0.1164678 Test Loss: 0.1164678
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.85583519935608
+Epoch: 5, Steps: 63 | Train Loss: 0.5093587 Vali Loss: 0.1093657 Test Loss: 0.1093657
+Validation loss decreased (0.109984 --> 0.109366).  Saving model ...
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.88807368278503
+Epoch: 6, Steps: 63 | Train Loss: 0.5031246 Vali Loss: 0.1057901 Test Loss: 0.1057901
+Validation loss decreased (0.109366 --> 0.105790).  Saving model ...
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.66589879989624
+Epoch: 7, Steps: 63 | Train Loss: 0.5039301 Vali Loss: 0.1082009 Test Loss: 0.1082009
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 69.73530006408691
+Epoch: 8, Steps: 63 | Train Loss: 0.4972370 Vali Loss: 0.1053302 Test Loss: 0.1053302
+Validation loss decreased (0.105790 --> 0.105330).  Saving model ...
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 69.78691387176514
+Epoch: 9, Steps: 63 | Train Loss: 0.4942272 Vali Loss: 0.1066765 Test Loss: 0.1066765
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.81844186782837
+Epoch: 10, Steps: 63 | Train Loss: 0.4917452 Vali Loss: 0.1051922 Test Loss: 0.1051922
+Validation loss decreased (0.105330 --> 0.105192).  Saving model ...
+Updating learning rate to 0.0003184157475180208
+Epoch: 11 cost time: 69.89350628852844
+Epoch: 11, Steps: 63 | Train Loss: 0.4886804 Vali Loss: 0.1088116 Test Loss: 0.1088116
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002730670898658255
+Epoch: 12 cost time: 69.89479160308838
+Epoch: 12, Steps: 63 | Train Loss: 0.4856910 Vali Loss: 0.1031694 Test Loss: 0.1031694
+Validation loss decreased (0.105192 --> 0.103169).  Saving model ...
+Updating learning rate to 0.00022693291013417452
+Epoch: 13 cost time: 69.8584418296814
+Epoch: 13, Steps: 63 | Train Loss: 0.4820621 Vali Loss: 0.1047907 Test Loss: 0.1047907
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0001815842524819793
+Epoch: 14 cost time: 69.90611386299133
+Epoch: 14, Steps: 63 | Train Loss: 0.4776398 Vali Loss: 0.1035232 Test Loss: 0.1035232
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00013856541105586545
+Epoch: 15 cost time: 69.96596479415894
+Epoch: 15, Steps: 63 | Train Loss: 0.4726887 Vali Loss: 0.1030736 Test Loss: 0.1030736
+Validation loss decreased (0.103169 --> 0.103074).  Saving model ...
+Updating learning rate to 9.934134090518593e-05
+Epoch: 16 cost time: 69.893239736557
+Epoch: 16, Steps: 63 | Train Loss: 0.4690430 Vali Loss: 0.1031582 Test Loss: 0.1031582
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 6.524777069483526e-05
+Epoch: 17 cost time: 69.93253779411316
+Epoch: 17, Steps: 63 | Train Loss: 0.4655076 Vali Loss: 0.1028725 Test Loss: 0.1028725
+Validation loss decreased (0.103074 --> 0.102873).  Saving model ...
+Updating learning rate to 3.7445716067596506e-05
+Epoch: 18 cost time: 69.89550471305847
+Epoch: 18, Steps: 63 | Train Loss: 0.4631342 Vali Loss: 0.1030677 Test Loss: 0.1030677
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 1.6881942648911074e-05
+Epoch: 19 cost time: 69.90376162528992
+Epoch: 19, Steps: 63 | Train Loss: 0.4617483 Vali Loss: 0.1024323 Test Loss: 0.1024323
+Validation loss decreased (0.102873 --> 0.102432).  Saving model ...
+Updating learning rate to 4.256725079024554e-06
+Epoch: 20 cost time: 69.85608839988708
+Epoch: 20, Steps: 63 | Train Loss: 0.4611935 Vali Loss: 0.1035244 Test Loss: 0.1035244
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0
+>>>>>>>testing : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf4_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:0.10289490967988968
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_thetaModel:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf5_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 72.19884657859802
+Epoch: 1, Steps: 63 | Train Loss: 0.8941277 Vali Loss: 0.2073664 Test Loss: 0.2073664
+Validation loss decreased (inf --> 0.207366).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 70.11034154891968
+Epoch: 2, Steps: 63 | Train Loss: 0.5407078 Vali Loss: 0.1944858 Test Loss: 0.1944858
+Validation loss decreased (0.207366 --> 0.194486).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.83042764663696
+Epoch: 3, Steps: 63 | Train Loss: 0.5170660 Vali Loss: 0.1899215 Test Loss: 0.1899215
+Validation loss decreased (0.194486 --> 0.189921).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 69.8892993927002
+Epoch: 4, Steps: 63 | Train Loss: 0.5075387 Vali Loss: 0.1844761 Test Loss: 0.1844761
+Validation loss decreased (0.189921 --> 0.184476).  Saving model ...
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.77846789360046
+Epoch: 5, Steps: 63 | Train Loss: 0.4989801 Vali Loss: 0.1839120 Test Loss: 0.1839120
+Validation loss decreased (0.184476 --> 0.183912).  Saving model ...
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.80805778503418
+Epoch: 6, Steps: 63 | Train Loss: 0.4935957 Vali Loss: 0.1807106 Test Loss: 0.1807106
+Validation loss decreased (0.183912 --> 0.180711).  Saving model ...
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.76922869682312
+Epoch: 7, Steps: 63 | Train Loss: 0.4954445 Vali Loss: 0.1846956 Test Loss: 0.1846956
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 69.89508509635925
+Epoch: 8, Steps: 63 | Train Loss: 0.4880523 Vali Loss: 0.1843512 Test Loss: 0.1843512
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 70.07751131057739
+Epoch: 9, Steps: 63 | Train Loss: 0.4857539 Vali Loss: 0.1791354 Test Loss: 0.1791354
+Validation loss decreased (0.180711 --> 0.179135).  Saving model ...
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.84766793251038
+Epoch: 10, Steps: 63 | Train Loss: 0.4827076 Vali Loss: 0.1803249 Test Loss: 0.1803249
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0003184157475180208
+Epoch: 11 cost time: 69.92292761802673
+Epoch: 11, Steps: 63 | Train Loss: 0.4802493 Vali Loss: 0.1857467 Test Loss: 0.1857467
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0002730670898658255
+Epoch: 12 cost time: 69.96653127670288
+Epoch: 12, Steps: 63 | Train Loss: 0.4780543 Vali Loss: 0.1784783 Test Loss: 0.1784783
+Validation loss decreased (0.179135 --> 0.178478).  Saving model ...
+Updating learning rate to 0.00022693291013417452
+Epoch: 13 cost time: 69.82487964630127
+Epoch: 13, Steps: 63 | Train Loss: 0.4740044 Vali Loss: 0.1790527 Test Loss: 0.1790527
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0001815842524819793
+Epoch: 14 cost time: 69.93031597137451
+Epoch: 14, Steps: 63 | Train Loss: 0.4700418 Vali Loss: 0.1795997 Test Loss: 0.1795997
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00013856541105586545
+Epoch: 15 cost time: 69.97305417060852
+Epoch: 15, Steps: 63 | Train Loss: 0.4670268 Vali Loss: 0.1799152 Test Loss: 0.1799152
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 9.934134090518593e-05
+Epoch: 16 cost time: 70.03993821144104
+Epoch: 16, Steps: 63 | Train Loss: 0.4643337 Vali Loss: 0.1805269 Test Loss: 0.1805269
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 6.524777069483526e-05
+Epoch: 17 cost time: 70.04979944229126
+Epoch: 17, Steps: 63 | Train Loss: 0.4612039 Vali Loss: 0.1807299 Test Loss: 0.1807299
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf5_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:0.17877547442913055
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_thetaModel:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf6_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 72.36301326751709
+Epoch: 1, Steps: 63 | Train Loss: 0.7703941 Vali Loss: 0.9258380 Test Loss: 0.9258380
+Validation loss decreased (inf --> 0.925838).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 70.17818522453308
+Epoch: 2, Steps: 63 | Train Loss: 0.4531490 Vali Loss: 0.8888463 Test Loss: 0.8888463
+Validation loss decreased (0.925838 --> 0.888846).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.89174556732178
+Epoch: 3, Steps: 63 | Train Loss: 0.4333060 Vali Loss: 0.8638106 Test Loss: 0.8638106
+Validation loss decreased (0.888846 --> 0.863811).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 69.83804726600647
+Epoch: 4, Steps: 63 | Train Loss: 0.4246393 Vali Loss: 0.8577802 Test Loss: 0.8577802
+Validation loss decreased (0.863811 --> 0.857780).  Saving model ...
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.85073399543762
+Epoch: 5, Steps: 63 | Train Loss: 0.4195165 Vali Loss: 0.8366960 Test Loss: 0.8366960
+Validation loss decreased (0.857780 --> 0.836696).  Saving model ...
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.90854215621948
+Epoch: 6, Steps: 63 | Train Loss: 0.4127810 Vali Loss: 0.8347444 Test Loss: 0.8347444
+Validation loss decreased (0.836696 --> 0.834744).  Saving model ...
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.7647156715393
+Epoch: 7, Steps: 63 | Train Loss: 0.4126478 Vali Loss: 0.8346782 Test Loss: 0.8346782
+Validation loss decreased (0.834744 --> 0.834678).  Saving model ...
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 69.72102522850037
+Epoch: 8, Steps: 63 | Train Loss: 0.4088688 Vali Loss: 0.8297457 Test Loss: 0.8297457
+Validation loss decreased (0.834678 --> 0.829746).  Saving model ...
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 69.86794018745422
+Epoch: 9, Steps: 63 | Train Loss: 0.4054985 Vali Loss: 0.8275398 Test Loss: 0.8275398
+Validation loss decreased (0.829746 --> 0.827540).  Saving model ...
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.644846200943
+Epoch: 10, Steps: 63 | Train Loss: 0.4039066 Vali Loss: 0.8224736 Test Loss: 0.8224736
+Validation loss decreased (0.827540 --> 0.822474).  Saving model ...
+Updating learning rate to 0.0003184157475180208
+Epoch: 11 cost time: 69.90374994277954
+Epoch: 11, Steps: 63 | Train Loss: 0.4022163 Vali Loss: 0.8230729 Test Loss: 0.8230729
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002730670898658255
+Epoch: 12 cost time: 69.80234098434448
+Epoch: 12, Steps: 63 | Train Loss: 0.3987811 Vali Loss: 0.8268154 Test Loss: 0.8268154
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00022693291013417452
+Epoch: 13 cost time: 69.83709287643433
+Epoch: 13, Steps: 63 | Train Loss: 0.3962982 Vali Loss: 0.8262626 Test Loss: 0.8262626
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0001815842524819793
+Epoch: 14 cost time: 69.97275161743164
+Epoch: 14, Steps: 63 | Train Loss: 0.3931944 Vali Loss: 0.8313207 Test Loss: 0.8313207
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00013856541105586545
+Epoch: 15 cost time: 69.91314935684204
+Epoch: 15, Steps: 63 | Train Loss: 0.3905645 Vali Loss: 0.8268412 Test Loss: 0.8268412
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf6_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:0.8238203525543213
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_thetaModel:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf7_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 72.3355884552002
+Epoch: 1, Steps: 63 | Train Loss: 0.7373420 Vali Loss: 1.1318256 Test Loss: 1.1318256
+Validation loss decreased (inf --> 1.131826).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 70.26002264022827
+Epoch: 2, Steps: 63 | Train Loss: 0.4266487 Vali Loss: 1.0696951 Test Loss: 1.0696951
+Validation loss decreased (1.131826 --> 1.069695).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.79641127586365
+Epoch: 3, Steps: 63 | Train Loss: 0.4116143 Vali Loss: 1.0497706 Test Loss: 1.0497706
+Validation loss decreased (1.069695 --> 1.049771).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 69.78682613372803
+Epoch: 4, Steps: 63 | Train Loss: 0.4026147 Vali Loss: 1.0367727 Test Loss: 1.0367727
+Validation loss decreased (1.049771 --> 1.036773).  Saving model ...
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.79389333724976
+Epoch: 5, Steps: 63 | Train Loss: 0.3977939 Vali Loss: 1.0196880 Test Loss: 1.0196880
+Validation loss decreased (1.036773 --> 1.019688).  Saving model ...
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.82326674461365
+Epoch: 6, Steps: 63 | Train Loss: 0.3913866 Vali Loss: 1.0139349 Test Loss: 1.0139349
+Validation loss decreased (1.019688 --> 1.013935).  Saving model ...
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.87170124053955
+Epoch: 7, Steps: 63 | Train Loss: 0.3913823 Vali Loss: 1.0171403 Test Loss: 1.0171403
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 69.88509178161621
+Epoch: 8, Steps: 63 | Train Loss: 0.3862907 Vali Loss: 1.0291463 Test Loss: 1.0291463
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 69.87878060340881
+Epoch: 9, Steps: 63 | Train Loss: 0.3844123 Vali Loss: 1.0213296 Test Loss: 1.0213296
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.86862015724182
+Epoch: 10, Steps: 63 | Train Loss: 0.3812597 Vali Loss: 1.0394902 Test Loss: 1.0394902
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0003184157475180208
+Epoch: 11 cost time: 69.93410921096802
+Epoch: 11, Steps: 63 | Train Loss: 0.3773657 Vali Loss: 1.0412953 Test Loss: 1.0412953
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf7_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:1.0148929357528687
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          flame               Is Training:        1                   
+  Model ID:           enc_in_23_target_thetaModel:              UNet                
+
+[1mData Loader[0m
+  Data:               FLAME               Root Path:          ./data/ETT/         
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             23                  Dec In:             7                   
+  C Out:              1                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       20                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0005              
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf8_we3>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 1008
+val 126
+val 126
+Epoch: 1 cost time: 72.2994396686554
+Epoch: 1, Steps: 63 | Train Loss: 0.8130194 Vali Loss: 0.6809656 Test Loss: 0.6809656
+Validation loss decreased (inf --> 0.680966).  Saving model ...
+Updating learning rate to 0.00016666666666666666
+Epoch: 2 cost time: 70.17719531059265
+Epoch: 2, Steps: 63 | Train Loss: 0.4806310 Vali Loss: 0.6454793 Test Loss: 0.6454793
+Validation loss decreased (0.680966 --> 0.645479).  Saving model ...
+Updating learning rate to 0.0003333333333333333
+Epoch: 3 cost time: 69.70753073692322
+Epoch: 3, Steps: 63 | Train Loss: 0.4672288 Vali Loss: 0.6359627 Test Loss: 0.6359627
+Validation loss decreased (0.645479 --> 0.635963).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 4 cost time: 69.75873970985413
+Epoch: 4, Steps: 63 | Train Loss: 0.4535042 Vali Loss: 0.6355690 Test Loss: 0.6355690
+Validation loss decreased (0.635963 --> 0.635569).  Saving model ...
+Updating learning rate to 0.0004957432749209755
+Epoch: 5 cost time: 69.89452147483826
+Epoch: 5, Steps: 63 | Train Loss: 0.4462124 Vali Loss: 0.6116834 Test Loss: 0.6116834
+Validation loss decreased (0.635569 --> 0.611683).  Saving model ...
+Updating learning rate to 0.00048311805735108893
+Epoch: 6 cost time: 69.76900553703308
+Epoch: 6, Steps: 63 | Train Loss: 0.4411788 Vali Loss: 0.6073583 Test Loss: 0.6073583
+Validation loss decreased (0.611683 --> 0.607358).  Saving model ...
+Updating learning rate to 0.0004625542839324036
+Epoch: 7 cost time: 69.765625
+Epoch: 7, Steps: 63 | Train Loss: 0.4463098 Vali Loss: 0.6097317 Test Loss: 0.6097317
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00043475222930516476
+Epoch: 8 cost time: 70.00404739379883
+Epoch: 8, Steps: 63 | Train Loss: 0.4372474 Vali Loss: 0.6048901 Test Loss: 0.6048901
+Validation loss decreased (0.607358 --> 0.604890).  Saving model ...
+Updating learning rate to 0.0004006586590948141
+Epoch: 9 cost time: 69.85582661628723
+Epoch: 9, Steps: 63 | Train Loss: 0.4354186 Vali Loss: 0.5996823 Test Loss: 0.5996823
+Validation loss decreased (0.604890 --> 0.599682).  Saving model ...
+Updating learning rate to 0.0003614345889441346
+Epoch: 10 cost time: 69.82125926017761
+Epoch: 10, Steps: 63 | Train Loss: 0.4332869 Vali Loss: 0.6030015 Test Loss: 0.6030015
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0003184157475180208
+Epoch: 11 cost time: 69.91572141647339
+Epoch: 11, Steps: 63 | Train Loss: 0.4320605 Vali Loss: 0.5991644 Test Loss: 0.5991644
+Validation loss decreased (0.599682 --> 0.599164).  Saving model ...
+Updating learning rate to 0.0002730670898658255
+Epoch: 12 cost time: 70.04249477386475
+Epoch: 12, Steps: 63 | Train Loss: 0.4308399 Vali Loss: 0.6033289 Test Loss: 0.6033289
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00022693291013417452
+Epoch: 13 cost time: 69.94110465049744
+Epoch: 13, Steps: 63 | Train Loss: 0.4299693 Vali Loss: 0.5963417 Test Loss: 0.5963417
+Validation loss decreased (0.599164 --> 0.596342).  Saving model ...
+Updating learning rate to 0.0001815842524819793
+Epoch: 14 cost time: 69.95680141448975
+Epoch: 14, Steps: 63 | Train Loss: 0.4261471 Vali Loss: 0.6054232 Test Loss: 0.6054232
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00013856541105586545
+Epoch: 15 cost time: 69.881844997406
+Epoch: 15, Steps: 63 | Train Loss: 0.4244663 Vali Loss: 0.5959879 Test Loss: 0.5959879
+Validation loss decreased (0.596342 --> 0.595988).  Saving model ...
+Updating learning rate to 9.934134090518593e-05
+Epoch: 16 cost time: 69.88964581489563
+Epoch: 16, Steps: 63 | Train Loss: 0.4225997 Vali Loss: 0.5967261 Test Loss: 0.5967261
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 6.524777069483526e-05
+Epoch: 17 cost time: 69.90738320350647
+Epoch: 17, Steps: 63 | Train Loss: 0.4206803 Vali Loss: 0.5940638 Test Loss: 0.5940638
+Validation loss decreased (0.595988 --> 0.594064).  Saving model ...
+Updating learning rate to 3.7445716067596506e-05
+Epoch: 18 cost time: 69.88071346282959
+Epoch: 18, Steps: 63 | Train Loss: 0.4193057 Vali Loss: 0.5961390 Test Loss: 0.5961390
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 1.6881942648911074e-05
+Epoch: 19 cost time: 69.92488431930542
+Epoch: 19, Steps: 63 | Train Loss: 0.4183133 Vali Loss: 0.5924615 Test Loss: 0.5924615
+Validation loss decreased (0.594064 --> 0.592461).  Saving model ...
+Updating learning rate to 4.256725079024554e-06
+Epoch: 20 cost time: 69.86299633979797
+Epoch: 20, Steps: 63 | Train Loss: 0.4179309 Vali Loss: 0.5993352 Test Loss: 0.5993352
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0
+>>>>>>>testing : flame_enc_in_23_target_theta_UNet_FLAME_ftM_sl5_ll48_pl20_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0nf8_we3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+val 126
+test shape: (126, 20, 113, 32) (126, 20, 113, 32)
+mse:0.5952995419502258
