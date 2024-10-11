@@ -164,5 +164,4 @@ if __name__ == '__main__':
     submit_api(theta, ustar, xi, 40, 'pred.npy', 'cpu')
 
     # # download
-    # download_checkpoints(token='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') # Private
     # download_checkpoints() # Public
