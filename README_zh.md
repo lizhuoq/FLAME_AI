@@ -76,9 +76,9 @@ bash ./scripts/for_kaggle/UNet_small_theta_train.sh
 - 为了方便你们复现，我没有采用最好的MSE策略，我认为达到0.00996就算复现成功 
 #### 训练日志
 为了帮助你更好的复现，可以参考我的训练日志
-- [xi_train_log](xi_train_log.out)
-- [theta_train_log](theta_train_log.out)
-- [ustar_train_log](ustar_train_log.out)
+- [xi_train_log](logs/xi_train_log.out)
+- [theta_train_log](logs/theta_train_log.out)
+- [ustar_train_log](logs/ustar_train_log.out)
 ### 第二步：推理  
 禁止使用exp中的inference方法，因为缺少bagging操作和后处理方法，推荐使用下面的`submit_api`函数
 推理至少需要32G的内存

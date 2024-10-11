@@ -77,9 +77,9 @@ MSE using the following inference API: 0.00996
 - For convenience in reproduction, I did not use the best MSE strategy. Achieving 0.00996 is considered successful reproduction.
 #### Training Logs  
 To help you better reproduce the results, you can refer to my training logs:  
-- [xi_train_log](xi_train_log.out)
-- [theta_train_log](theta_train_log.out)
-- [ustar_train_log](ustar_train_log.out)
+- [xi_train_log](logs/xi_train_log.out)
+- [theta_train_log](logs/theta_train_log.out)
+- [ustar_train_log](logs/ustar_train_log.out)
 ### Step 2: Inference  
 Avoid using the inference method in the `exp` module, as it lacks bagging and post-processing steps. Instead, use the `submit_api` function below.  
 Inference requires at least 32G of memory.
