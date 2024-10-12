@@ -93,6 +93,25 @@ def inference(x, variable, device):
     return outputs.mean(axis=0)[:, -1, :, :]
 
 
+def batch_inference(x, variable, device):
+    '''
+    Input:
+        x shape: B, 5, 23, 113, 32
+    Return:
+        shape: B, 20, 113, 32
+    '''
+    outputs = []
+    x = torch.tensor(x).float().to(torch.device('cpu') if device == 'cpu' else torch.device('cuda'))
+    for i in tqdm(range(N_MODELS)):
+        model = load_model(variable, i, device)
+        model.eval()
+        with torch.no_grad():
+            output = model(x).detach().cpu().numpy()
+        outputs.append(output)
+    outputs = np.stack(outputs, axis=0)
+    return outputs.mean(axis=0)[:, :, -1, :, :]
+
+
 def concat_features(theta, ustar, xi, transform=False):
     '''
     Input:
@@ -110,6 +129,66 @@ def concat_features(theta, ustar, xi, transform=False):
     return x
 
 
+def batch_concat_features(theta, ustar, xi, transform=False):
+    '''
+    Input:
+        theta shape: B, 5, 113, 32
+        ustar shape: B, 5, 113, 32
+        xi shape: B, 5, 113, 32
+    Return:
+        batch_x shape: B, 5, 23, 113, 32
+    '''
+    B, _, _, _ = theta.shape
+    batch_x = []
+    for i in range(B):
+        x = concat_features(theta[i], ustar[i], xi[i], transform)
+        batch_x.append(x)
+    batch_x = np.stack(batch_x, axis=0)
+    return batch_x
+
+
+def batch_submit(
+        theta: np.ndarray, 
+        ustar: np.ndarray, 
+        xi: np.ndarray, 
+        pred_len: int, 
+        save_path: str, 
+        device: str = 'cpu', 
+) -> np.ndarray:
+    '''
+    Input:
+        theta shape: B, 5, 113, 32
+        ustar shape: B, 5, 113, 32
+        xi shape: B, 5, 113, 32
+    Return:
+        shape: B, pred_len, 113, 32
+    '''
+    x = batch_concat_features(theta, ustar, xi, transform=True)
+    if pred_len <= 20:
+        preds = batch_inference(x, 'xi', device)
+        preds = np.clip(preds, 0, 1)
+    else:
+        n_ar = pred_len // 20
+        if pred_len % 20 != 0:
+            n_ar += 1
+        preds = []
+        for i in range(n_ar):
+            xi = batch_inference(x, 'xi', device)
+            xi = np.clip(xi, 0, 1)
+            if i != n_ar - 1:
+                theta = batch_inference(x, 'theta', device)
+                ustar = batch_inference(x, 'ustar', device)
+
+                x = batch_concat_features(theta[:, -5:, ...], ustar[:, -5:, ...], xi[:, -5:, ...])
+
+            preds.append(xi)
+        preds = np.concatenate(preds, axis=1)[:, :pred_len]
+
+    np.save(save_path, preds)
+    return preds
+
+
+
 def submit_api(
         theta: np.ndarray, 
         ustar: np.ndarray, 
@@ -120,12 +199,14 @@ def submit_api(
 ) -> np.ndarray:
     '''
     Input:
-        theta shape: 5, 113, 32
-        ustar shape: 5, 113, 32
-        xi shape: 5, 113, 32
+        theta shape: 5, 113, 32 or B, 5, 113, 32
+        ustar shape: 5, 113, 32 or B, 5, 113, 32 
+        xi shape: 5, 113, 32 or B, 5, 113, 32
     Return:
-        shape: pred_len, 113, 32
+        shape: pred_len, 113, 32 or B, pred_len, 113, 32
     '''
+    if theta.ndim == 4:
+        return batch_submit(theta, ustar, xi, pred_len, save_path, device)
     for data in [theta, ustar, xi]:
         check_shape(data, 5)
 

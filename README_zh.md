@@ -106,6 +106,47 @@ def submit_api(
 ```python
 import numpy as np
 pred = np.load(save_path) # shape: pred_len, 113, 32
+```  
+- **更新： `submit_api`现在可以支持batch操作，`theta`，`ustar`，`xi`要求shape为（B，5，113，32），我推荐您使用batch操作，这样可以大幅提高推理速度，但不要将batch设置太高，如果batch太大，需要分成多个chunk进行推理**  
+```python 
+from for_kaggle import submit_api
+import numpy as np
+import pandas as pd
+import os
+from tqdm import tqdm
+from joblib import dump
+
+test_dir = 'dataset/dataset/test'
+df = pd.read_csv('dataset/dataset/test.csv')
+
+# batch example
+theta_list = []
+ustar_list = []
+xi_list = []
+indexes = []
+for i in tqdm(range(len(df))):
+    theta = np.fromfile(os.path.join(test_dir, df.iloc[i]['theta_filename']), dtype='<f4').reshape(5, 113, 32)
+    ustar = np.fromfile(os.path.join(test_dir, df.iloc[i]['ustar_filename']), dtype='<f4').reshape(5, 113, 32)
+    xi = np.fromfile(os.path.join(test_dir, df.iloc[i]['xi_filename']), dtype='<f4').reshape(5, 113, 32)
+    theta_list.append(theta)
+    ustar_list.append(ustar)
+    xi_list.append(xi)
+    indexes.append(df.iloc[i]['id'])
+
+submit_api(
+    theta=np.stack(theta_list, axis=0), 
+    ustar=np.stack(ustar_list, axis=0), 
+    xi=np.stack(xi_list, axis=0), 
+    pred_len=30, 
+    save_path='temp/pred.npy', 
+    device='cpu'
+)
+dump(indexes, 'temp/indexes.joblib')
+```  
+```python
+import numpy as np
+# batch read
+pred = np.load(save_path) # B, pred_len, 113, 32
 ```
 ### 联系方式  
 复现过程如果有任何问题联系我  
