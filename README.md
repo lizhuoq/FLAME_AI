@@ -71,10 +71,6 @@ bash ./scripts/for_kaggle/UNet_small_xi_train.sh
 bash ./scripts/for_kaggle/UNet_small_theta_train.sh
 bash ./scripts/for_kaggle/UNet_small_theta_train.sh
 ```  
-#### Leaderboard MSE      
-Best MSE: 0.00995 (obtained by bagging all cross-validation weights of two models).  
-MSE using the following inference API: 0.00996  
-- For convenience in reproduction, I did not use the best MSE strategy. Achieving 0.00996 is considered successful reproduction.
 #### Training Logs  
 To help you better reproduce the results, you can refer to my training logs:  
 - [xi_train_log](logs/xi_train_log.out)

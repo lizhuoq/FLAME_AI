@@ -167,6 +167,8 @@ def batch_submit(
     if pred_len <= 20:
         preds = batch_inference(x, 'xi', device)
         preds = np.clip(preds, 0, 1)
+        preds = np.where(preds <= 0.01, 0, preds)
+        preds = np.where(preds >= 0.99, 1, preds)
     else:
         n_ar = pred_len // 20
         if pred_len % 20 != 0:
@@ -175,6 +177,8 @@ def batch_submit(
         for i in range(n_ar):
             xi = batch_inference(x, 'xi', device)
             xi = np.clip(xi, 0, 1)
+            xi = np.where(xi <= 0.01, 0, xi)
+            xi = np.where(xi >= 0.99, 1, xi)
             if i != n_ar - 1:
                 theta = batch_inference(x, 'theta', device)
                 ustar = batch_inference(x, 'ustar', device)
@@ -215,6 +219,8 @@ def submit_api(
     if pred_len <= 20:
         preds = inference(x, 'xi', device)[:pred_len]
         preds = np.clip(preds, 0, 1)
+        preds = np.where(preds <= 0.01, 0, preds)
+        preds = np.where(preds >= 0.99, 1, preds)
     else:
         n_ar = pred_len // 20
         if pred_len % 20 != 0:
@@ -223,6 +229,8 @@ def submit_api(
         for i in range(n_ar):
             xi = inference(x, 'xi', device)
             xi = np.clip(xi, 0, 1)
+            xi = np.where(xi <= 0.01, 0, xi)
+            xi = np.where(xi >= 0.99, 1, xi)
             if i != n_ar - 1:
                 theta = inference(x, 'theta', device)
                 ustar = inference(x, 'ustar', device)

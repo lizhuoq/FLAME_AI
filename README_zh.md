@@ -70,10 +70,6 @@ bash ./scripts/for_kaggle/UNet_small_xi_train.sh
 bash ./scripts/for_kaggle/UNet_small_theta_train.sh
 bash ./scripts/for_kaggle/UNet_small_theta_train.sh
 ```  
-#### 排行榜MSE      
-最好MSE：0.00995 对两个模型的所有交叉验证权重进行bagging  
-使用下面推理api可以得到的MSE：0.00996  
-- 为了方便你们复现，我没有采用最好的MSE策略，我认为达到0.00996就算复现成功 
 #### 训练日志
 为了帮助你更好的复现，可以参考我的训练日志
 - [xi_train_log](logs/xi_train_log.out)
